@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - HOOPIFY</title>
+    <!-- Import Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Import Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --orange-light: #FFA500;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--orange-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange-light);
+        }
+
+        /* About Section Styles */
+        .about-section {
+            margin-top: 80px;
+            padding: 50px 5%;
+            background: linear-gradient(rgba(255,165,0,0.1), rgba(255,165,0,0.2));
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .values-section {
+            padding: 50px 5%;
+            background-color: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            padding: 30px;
+            text-align: center;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .value-card i {
+            font-size: 40px;
+            color: var(--orange-light);
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* Profile Sidebar */
+        .profile-sidebar {
+            position: fixed;
+            left: -300px;
+            top: 0;
+            width: 300px;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            transition: left 0.3s;
+            z-index: 1001;
+        }
+
+        .profile-sidebar.active {
+            left: 0;
+        }
+
+        .profile-header {
+            padding: 20px;
+            background-color: var(--orange-light);
+            color: var(--white);
+        }
+
+        .profile-content {
+            padding: 20px;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="bg-white shadow fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+     <div class="menu-toggle cursor-pointer text-2xl text-gray-800" onclick="toggleProfile()">
+      <i class="fas fa-bars">
+      </i>
+     </div>
+     <a class="flex items-center" href="index.html">
+      <img alt="Logo HOOPIFY, sebuah logo toko peralatan basket online" class="h-10" height="30" src="logo/logo.png" width="200"/>
+     </a>
+     <div class="hidden md:flex space-x-8">
+      <a class="text-gray-800 font-medium hover:text-orange-500" href="produk.html">
+       Produk
+      </a>
+      <a class="text-gray-800 font-medium hover:text-orange-500" href="kategori.html">
+       Kategori
+      </a>
+      <a class="text-gray-800 font-medium hover:text-orange-500" href="keranjang.html">
+       Keranjang
+      </a>
+      <a class="text-gray-800 font-medium hover:text-orange-500" href="tentang.html">
+       Tentang Kami
+      </a>
+     </div>
+    </div>
+   </nav>
+    <!-- Profile Sidebar -->
+    <div class="profile-sidebar" id="profileSidebar">
+        <div class="profile-header">
+            <h3>Profil Saya</h3>
+        </div>
+        <div class="profile-content">
+            <p>Selamat datang!</p>
+            <p>Silakan login untuk melanjutkan</p>
+            <a href="login.html" class="cta-button">Masuk</a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-content">
+            <h1>Tentang HOOPIFY</h1>
+            <p>HOOPIFY adalah marketplace terpercaya yang menyediakan berbagai perlengkapan basket berkualitas tinggi. Kami berkomitmen untuk memberikan pengalaman berbelanja yang terbaik bagi para pecinta basket di Indonesia.</p>
+            <p>Didirikan pada tahun 2023, HOOPIFY telah melayani ribuan pelanggan dengan produk-produk basket terbaik dari berbagai merek ternama. Kami memahami pentingnya kualitas dalam setiap produk yang kami tawarkan.</p>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-medal"></i>
+                <h3>Kualitas Terbaik</h3>
+                <p>Kami hanya menyediakan produk berkualitas tinggi dari merek terpercaya</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Pengiriman Cepat</h3>
+                <p>Layanan pengiriman cepat ke seluruh Indonesia</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-headset"></i>
+                <h3>Layanan 24/7</h3>
+                <p>Tim customer service kami siap membantu Anda kapan saja</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleProfile() {
+            const sidebar = document.getElementById('profileSidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('profileSidebar');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - HOOPIFY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --orange-light: #FFA500;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--orange-light);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange-light);
+        }
+
+        /* Contact Page Specific Styles */
+        .contact-container {
+            margin-top: 100px;
+            padding: 0 5%;
+        }
+
+        .contact-hero {
+            text-align: center;
+            padding: 50px 0;
+            background: linear-gradient(rgba(255,165,0,0.1), rgba(255,165,0,0.2));
+        }
+
+        .contact-hero h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 50px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .info-card i {
+            color: var(--orange-light);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-btn {
+            background-color: var(--orange-light);
+            color: var(--white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #FF8C00;
+        }
+
+        /* Profile Sidebar */
+        .profile-sidebar {
+            position: fixed;
+            left: -300px;
+            top: 0;
+            width: 300px;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            transition: left 0.3s;
+            z-index: 1001;
+        }
+
+        .profile-sidebar.active {
+            left: 0;
+        }
+
+        .profile-header {
+            padding: 20px;
+            background-color: var(--orange-light);
+            color: var(--white);
+        }
+
+        .profile-content {
+            padding: 20px;
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="bg-white shadow fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+     <div class="menu-toggle cursor-pointer text-2xl text-gray-800" onclick="toggleProfile()">
+      <i class="fas fa-bars">
+      </i>
+     </div>
+     <a class="flex items-center" href="index.html">
+      <img alt="Logo HOOPIFY, sebuah logo toko peralatan basket online" class="h-10" height="30" src="logo/logo.png" width="200"/>
+     </a>
+     <div class="hidden md:flex space-x-8">
+      <a class="text-gray-800 font-medium hover:text-orange-500" href="produk.html">
+       Produk
+      </a>
+      <a class="text-gray-800 font-medium hover:text-orange-500" href="kategori.html">
+       Kategori
+      </a>
+      <a class="text-gray-800 font-medium hover:text-orange-500" href="keranjang.html">
+       Keranjang
+      </a>
+      <a class="text-gray-800 font-medium hover:text-orange-500" href="tentang.html">
+       Tentang Kami
+      </a>
+     </div>
+    </div>
+   </nav>
+    <!-- Profile Sidebar -->
+    <div class="profile-sidebar" id="profileSidebar">
+        <div class="profile-header">
+            <h3>Profil Saya</h3>
+        </div>
+        <div class="profile-content">
+            <p>Selamat datang!</p>
+            <p>Silakan login untuk melanjutkan</p>
+            <a href="login.html" class="cta-button">Masuk</a>
+        </div>
+    </div>
+
+    <!-- Rest of your contact page content remains the same -->
+    <!-- ... -->
+
+    <script>
+        function toggleProfile() {
+            const sidebar = document.getElementById('profileSidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('profileSidebar');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

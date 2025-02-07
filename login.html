@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - HOOPIFY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --orange-light: #FFA500;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navbar Styles */
+        .bg-white {
+            background-color: var(--white);
+        }
+
+        .shadow {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-toggle {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .menu-toggle i {
+            font-size: 1.5rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .hidden.md\\:flex {
+                display: flex;
+            }
+        }
+
+        .space-x-8 > *:not(:last-child) {
+            margin-right: 2rem;
+        }
+
+        .text-gray-800 {
+            color: #333;
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .hover\\:text-orange-500:hover {
+            color: var(--orange-light);
+        }
+
+        /* Login Container Styles */
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(255, 165, 0, 0.1), rgba(255, 165, 0, 0.2));
+            padding: 100px 20px 20px;
+        }
+
+        .login-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h2 {
+            color: var(--orange-light);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: var(--orange-light);
+            outline: none;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--orange-light);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #FF8C00;
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-footer a {
+            color: var(--orange-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-login {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .social-login p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .social-button {
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .social-button:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="menu-toggle cursor-pointer text-2xl text-gray-800" onclick="toggleProfile()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <a class="flex items-center" href="index.html">
+                <img alt="Logo HOOPIFY" class="h-10" src="logo/logo.png"/>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a class="text-gray-800 font-medium hover:text-orange-500" href="error.html">Kategori</a>
+                <a class="text-gray-800 font-medium hover:text-orange-500" href="error.html">Keranjang</a>
+                <a class="text-gray-800 font-medium hover:text-orange-500" href="error.html">Tentang Kami</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h2>Masuk ke HOOPIFY</h2>
+                <p>Silakan masuk untuk melanjutkan</p>
+            </div>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Masukkan email Anda">
+                </div>
+                <div class="form-group">
+                    <label for="password">Kata Sandi</label>
+                    <input type="password" id="password" name="password" required placeholder="Masukkan kata sandi">
+                </div>
+                <button type="submit" class="login-button">Masuk</button>
+            </form>
+            <div class="login-footer">
+                <p>Belum punya akun? <a href="user.html">VIP Access</a></p>
+                <a href="error.html">atau Lupa kata sandi?</a>
+            </div>
+            <div class="social-login">
+                <p>Atau masuk dengan</p>
+                <div class="social-buttons">
+                    <button class="social-button" aria-label="Masuk dengan Google">
+                        <i class="fab fa-google"></i>
+                        Google
+                    </button>
+                    <button class="social-button" aria-label="Masuk dengan Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        Facebook
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                alert('Login berhasil!');
+                window.location.href = 'user.html'; // Mengarahkan ke halaman user.html
+            } else {
+                alert('Harap isi semua field!');
+            }
+        });
+    </script>
+</body>
+</html>
