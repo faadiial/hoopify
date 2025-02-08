@@ -1,73 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>HOOPIFY - Toko Peralatan Basket Online</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops! Error 404</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="font-poppins bg-gray-100">
-    <!-- Navbar -->
-    <nav class="bg-orange-500 text-white fixed w-full top-0 z-50 shadow-md">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a class="flex items-center space-x-2" href="index.html">
-                <img alt="Logo HOOPIFY" class="h-8" src="logo/logo.png"/>
-                <span class="text-lg font-semibold">HOOPIFY</span>
-            </a>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a class="hover:text-gray-200 transition" href="index.html">Beranda</a>
-                <a class="hover:text-gray-200 transition" href="kategori.html">Kategori</a>
-                <a class="hover:text-gray-200 transition" href="keranjang.html">Keranjang</a>
-                <a class="hover:text-gray-200 transition" href="tentang.html">Tentang Kami</a>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a class="bg-white text-orange-500 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-200 transition" href="login.html">Masuk</a>
-                <button class="menu-toggle text-xl md:hidden" onclick="toggleMenu()">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+<body class="flex items-center justify-center min-h-screen bg-white text-gray-800 font-poppins">
+    <div class="container mx-auto px-6 flex flex-col items-center text-center">
+        <div class="md:w lg:w-1/2 flex justify-center">
+            <img src="logo/error.png" alt="Error Illustration" class="w-96 animate-bounce" />
         </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed left-0 top-0 w-full h-screen bg-black bg-opacity-50 hidden z-40">
-        <div class="w-64 bg-white h-full shadow-md p-6">
-            <button class="text-gray-800 text-2xl mb-6" onclick="toggleMenu()">
-                <i class="fas fa-times"></i>
-            </button>
-            <nav class="space-y-4">
-                <a class="block text-gray-800 font-medium hover:text-orange-500" href="index.html">Beranda</a>
-                <a class="block text-gray-800 font-medium hover:text-orange-500" href="kategori.html">Kategori</a>
-                <a class="block text-gray-800 font-medium hover:text-orange-500" href="keranjang.html">Keranjang</a>
-                <a class="block text-gray-800 font-medium hover:text-orange-500" href="tentang.html">Tentang Kami</a>
-            </nav>
-        </div>
+        <h2 class="mt-6 text-4xl font-bold tracking-tight text-gray-900">Waduh!</h2>
+        <p class="mt-4 text-lg text-gray-500">Maaf, halaman ini masih dalam pembuatan.</p>
+        <a href="index.html" class="mt-6 inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-orange-600 transition">Kembali ke Beranda</a>
     </div>
-
-    <!-- Header Section -->
-    <header class="mt-16 h-96 bg-[url('logo/bg.png')] bg-no-repeat bg-center bg-cover flex items-center justify-center text-center px-4">
-        <div>
-            <h1 class="text-4xl font-bold text-white mb-4">Selamat Datang di HOOPIFY</h1>
-            <p class="text-lg text-gray-100 mb-6">Temukan Perlengkapan Basket Berkualitas untuk Permainan Terbaikmu</p>
-            <a class="bg-white text-orange-500 py-2 px-6 rounded-full font-semibold hover:bg-gray-200 transition" href="produk.html">Mulai Belanja</a>
-        </div>
-    </header>
-
-    <!-- Footer Section -->
-    <footer class="bg-orange-500 text-white mt-10">
-        <div class="container mx-auto px-4 py-6 text-center">
-            <p class="text-sm">&copy; 2025 HOOPIFY. All rights reserved.</p>
-            <p class="text-xs">Created with ⚡ by Fadi Alyuliansyah</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
 </body>
 </html>
