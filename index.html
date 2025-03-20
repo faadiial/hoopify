@@ -69,55 +69,14 @@
     }
 </script>
 
-    <!--HEADER SECTION-->
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-<!-- HEADER SECTION -->
-<header x-data="{ 
-    current: 0, 
-    slides: [
-        { title: 'Selamat Datang di HOOPIFY', desc: 'Temukan Perlengkapan Basket Berkualitas untuk Permainan Terbaikmu', bg: 'header/header1.png' },
-        { title: 'Diskon 20% untuk Produk Baru!', desc: 'Dapatkan sepatu dan perlengkapan terbaru dengan harga spesial', bg: 'header/header2.png' },
-        { title: 'Bundle Spesial', desc: 'Beli satu set perlengkapan dengan harga lebih hemat', bg: 'header/header4.png' },
-        { title: 'Gratis Ongkir!', desc: 'Nikmati belanja hemat dengan gratis ongkir ke seluruh Indonesia', bg: 'header/header3.png' }
-    ],
-    next() { this.current = (this.current + 1) % this.slides.length },
-    prev() { this.current = (this.current - 1 + this.slides.length) % this.slides.length }
-}" 
-class="mt-24 relative w-[90%] mx-auto overflow-hidden rounded-lg shadow-lg group">
-
-    <!-- Container Slide -->
-    <div class="relative w-full min-h-[300px]">
-        <template x-for="(slide, index) in slides" :key="index">
-            <div x-show="current === index"
-                x-transition:enter="transform transition-transform duration-700 ease-in-out"
-                x-transition:enter-start="translate-x-full"
-                x-transition:enter-end="translate-x-0"
-                x-transition:leave="transform transition-transform duration-700 ease-in-out"
-                x-transition:leave-start="translate-x-0"
-                x-transition:leave-end="-translate-x-full"
-                class="absolute inset-0 flex items-center justify-center text-center px-6 w-full h-full"
-                :style="'background: url(' + slide.bg + ') center center / cover no-repeat;'">
-                <div class="bg-white bg-opacity-70 p-6 rounded-xl shadow-md">
-                    <h1 class="text-4xl font-bold text-gray-800 mb-3" x-text="slide.title"></h1>
-                    <p class="text-lg text-gray-600 mb-4" x-text="slide.desc"></p>
-                    <a class="bg-orange-500 text-white py-2 px-5 rounded-full font-semibold hover:bg-orange-600 transition duration-300" href="error.html">Mulai Belanja</a>
-                </div>
-            </div>
-        </template>
-    </div>
-
-    <!-- Tombol Navigasi (User Klik Manual) -->
-    <button @click="prev()" 
-        class="absolute left-6 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full shadow-lg transition duration-300 opacity-0 group-hover:opacity-100">
-        &#10094;
-    </button>
-    <button @click="next()" 
-        class="absolute right-6 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full shadow-lg transition duration-300 opacity-0 group-hover:opacity-100">
-        &#10095;
-    </button>
-
-</header>
+    <!-- Header Section -->
+    <header class="mt-20 h-96 bg-[url('logo/hup.png')] bg-no-repeat bg-center bg-cover flex items-center justify-center text-center px-4">
+        <div>
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Selamat Datang di HOOPIFY</h1>
+            <p class="text-lg text-gray-600 mb-6">Temukan Perlengkapan Basket Berkualitas untuk Permainan Terbaikmu</p>
+            <a class="bg-orange-500 text-white py-2 px-6 rounded-full font-semibold hover:bg-orange-600 transition" href="produk.html">Mulai Belanja</a>
+        </div>
+    </header>
 
     <!-- Product Section -->
     <div class="container mx-auto mt-10 px-4">
